@@ -83,14 +83,7 @@
 		1F431BE9294DE207009F09FB /* Motion ball */ = {
 			isa = PBXGroup;
 			children = (
-				1FADDDF22950AA800086D8FB /* bird3.json */,
-				1FADDDEE2950A5490086D8FB /* bird2.json */,
-				1FADDDEA295099E90086D8FB /* fly.json */,
-				1F431C02294E56FA009F09FB /* bird.json */,
-				1FADDDD6294E6D9C0086D8FB /* bird0.json */,
-				1F431C04294E5E87009F09FB /* sky.json */,
-				1FADDDE2294E7E2C0086D8FB /* play.json */,
-				1FADDDE6295053E60086D8FB /* loading.json */,
+				1FADDDF42950AE9C0086D8FB /* New Group */,
 				1F431BEA294DE207009F09FB /* AppDelegate.swift */,
 				1F431BEC294DE207009F09FB /* SceneDelegate.swift */,
 				1F431BEE294DE207009F09FB /* GameViewController.swift */,
@@ -102,6 +95,21 @@
 				1F431BF8294DE209009F09FB /* Info.plist */,
 			);
 			path = "Motion ball";
+			sourceTree = "<group>";
+		};
+		1FADDDF42950AE9C0086D8FB /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				1FADDDF22950AA800086D8FB /* bird3.json */,
+				1FADDDEE2950A5490086D8FB /* bird2.json */,
+				1FADDDEA295099E90086D8FB /* fly.json */,
+				1F431C02294E56FA009F09FB /* bird.json */,
+				1FADDDD6294E6D9C0086D8FB /* bird0.json */,
+				1F431C04294E5E87009F09FB /* sky.json */,
+				1FADDDE2294E7E2C0086D8FB /* play.json */,
+				1FADDDE6295053E60086D8FB /* loading.json */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		37DE67D38BC9D65BD92730C8 /* Frameworks */ = {
