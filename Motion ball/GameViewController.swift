@@ -17,8 +17,6 @@ class GameViewController: UIViewController {
     private lazy var imageViewThird = UIImageView(image: image)
     var isGaming = true
     
-    //private var animationView: AnimationView!
-    
     @IBOutlet weak var birdView: UIView!
     
     @IBOutlet weak var foodView: UIView!
@@ -28,25 +26,23 @@ class GameViewController: UIViewController {
     @IBOutlet weak var fonAnimeView: UIView!
     
     let myView = UIView()
-
+    
     let motionManager = CMMotionManager()
     var timer: Timer!
     var absoluteVal = 0.0
-
+    
     var lastX = 0.0
     var lastY = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
         view.addSubview(foodView)
         foodView.frame = CGRect(x: 900, y: 50, width: 70, height: 70)
         
         view.addSubview(birdView)
         birdView.frame = CGRect(x: 900, y: 200, width: 100, height: 100)
-
+        
         view.addSubview(imageView)
         imageView.frame = CGRect(x: 900, y: 50, width: 50, height: 50)
         view.addSubview(imageViewSecond)
@@ -58,21 +54,9 @@ class GameViewController: UIViewController {
         motionManager.startGyroUpdates()
         motionManager.startMagnetometerUpdates()
         motionManager.startDeviceMotionUpdates()
-
+        
         timer = Timer.scheduledTimer(timeInterval: 0.0083333333, target: self, selector: #selector(GameViewController.update), userInfo: nil, repeats: true)
-        //fonAnimationView()
     }
-    
-//    func fonAnimationView() {
-//        animationView = .init(name: "bird")
-//        animationView.contentMode = .scaleAspectFit
-//        animationView.frame = self.fonAnimeView.bounds
-//        animationView.loopMode = .loop
-//        view.addSubview(animationView)
-//        animationView.play()
-//    }
-    
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -152,9 +136,8 @@ class GameViewController: UIViewController {
                     self.imageView.frame.origin.x +=
                     self.view.frame.height - 1400
                 })
-            
         }
-
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.intersectsFirstBird()
         }
@@ -195,29 +178,22 @@ class GameViewController: UIViewController {
             self.intersectsThirdBird()
         }
     }
-    
-    
-    
-    
+  
     func checkIntersect(_ first: UIView, _ second: UIView) -> Bool {
         guard let firstFrame = first.layer.presentation()?.frame,
               let secondFrame = second.layer.presentation()?.frame else { return true }
-
+        
         return firstFrame.intersects(secondFrame)
     }
-    
-    
-    
-    
     
     @objc func update() {
         if let accelerometerData = motionManager.accelerometerData {
             let valX = accelerometerData.acceleration.x
             let valY = accelerometerData.acceleration.y
-
+            
             animeView.frame.origin.x -= CGFloat(valY * 5)
             animeView.frame.origin.y -= CGFloat(valX * 5)
-
+            
             lastX = valY
             lastY = valX
         }
